@@ -75,7 +75,7 @@ export const useSocketInstance = () => {
       processQueue();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isConnected]);
+  }, [isConnected, eventQueue]); // This will rerun the effect when either the socket is connected and when there is queue to run
 
   return {emitWithAck, isConnected, message, setMessage};
 };
